@@ -31,8 +31,9 @@ jobs:
       uses: lukka/run-cmake@v10
       with:
         cmakeListsTxtPath: '${{ github.workspace }}/CMakeLists.txt'
-        configurePreset: release-msvc
+        configurePreset: build-release-msvc
         configurePresetAdditionalArgs: "['-DCMAKE_TOOLCHAIN_FILE:STRING=C:/vcpkg/scripts/buildsystems/vcpkg.cmake']"
+        buildPreset: release-msvc
   
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.2
