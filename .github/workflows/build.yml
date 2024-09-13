@@ -30,9 +30,7 @@ jobs:
     - name: Run CMake in accordance with CMakePreset.json and run vcpkg
       uses: lukka/run-cmake@v10
       with:
-        cmakeListsTxtPath: '${{ github.workspace }}/CMakeLists.txt'
         configurePreset: build-release-msvc
-        configurePresetAdditionalArgs: "['-DCMAKE_TOOLCHAIN_FILE:STRING=C:/vcpkg/scripts/buildsystems/vcpkg.cmake']"
         buildPreset: release-msvc
   
     - name: Upload a Build Artifact
