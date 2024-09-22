@@ -69,6 +69,24 @@
           "value": "RelWithDebInfo"
         }
       }
+    },
+    {
+      "name": "build-debug-msvc",
+      "inherits": [
+        "base",
+        "vcpkg",
+        "x64",
+        "msvc"
+      ],
+      "displayName": "Debug",
+      "description": "Debug build for testing.",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Debug"
+        }
+      }
     }
   ],
   "buildPresets": [
@@ -77,6 +95,12 @@
       "displayName": "Release (MSVC)",
       "configurePreset": "build-release-msvc",
       "description": "Optimized release Build."
+    },
+    {
+      "name": "debug-msvc",
+      "displayName": "Debug (MSVC)",
+      "configurePreset": "build-debug-msvc",
+      "description": "Debug build for local testing."
     }
   ]
 }
